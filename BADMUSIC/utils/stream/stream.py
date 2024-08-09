@@ -7,24 +7,24 @@ import asyncio
 from pyrogram import client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from BrandrdXMusic.utils.database import get_assistant
+from BADMUSIC.utils.database import get_assistant
 import config
-from BrandrdXMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
-from BrandrdXMusic.core.call import BAD
-from BrandrdXMusic.misc import SUDOERS
-from BrandrdXMusic.utils import seconds_to_min, time_to_seconds
-from BrandrdXMusic.utils.channelplay import get_channeplayCB
-from BrandrdXMusic.utils.decorators.language import languageCB
-from BrandrdXMusic.utils.decorators.play import PlayWrapper
-from BrandrdXMusic.utils.formatters import formats
-from BrandrdXMusic.utils.inline import (
+from BADMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
+from BADMUSIC.core.call import BAD
+from BADMUSIC.misc import SUDOERS
+from BADMUSIC.utils import seconds_to_min, time_to_seconds
+from BADMUSIC.utils.channelplay import get_channeplayCB
+from BADMUSIC.utils.decorators.language import languageCB
+from BADMUSIC.utils.decorators.play import PlayWrapper
+from BADMUSIC.utils.formatters import formats
+from BADMUSIC.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from BrandrdXMusic.utils.database import (
+from BADMUSIC.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -32,10 +32,10 @@ from BrandrdXMusic.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from BrandrdXMusic.utils.logger import play_logs
+from BADMUSIC.utils.logger import play_logs
 from config import BANNED_USERS, lyrical
 from time import time
-from BrandrdXMusic.utils.extraction import extract_user
+from BADMUSIC.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -48,20 +48,20 @@ SPAM_WINDOW_SECONDS = 5
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from BrandrdXMusic import Carbon, YouTube, app
-from BrandrdXMusic.core.call import BAD
-from BrandrdXMusic.misc import db
-from BrandrdXMusic.utils.database import add_active_video_chat, is_active_chat
-from BrandrdXMusic.utils.exceptions import AssistantErr
-from BrandrdXMusic.utils.inline import (
+from BADMUSIC import Carbon, YouTube, app
+from BADMUSIC.core.call import BAD
+from BADMUSIC.misc import db
+from BADMUSIC.utils.database import add_active_video_chat, is_active_chat
+from BADMUSIC.utils.exceptions import AssistantErr
+from BADMUSIC.utils.inline import (
     aq_markup,
     queuemarkup,
     close_markup,
     stream_markup,
     panel_markup_4,
 )
-from BrandrdXMusic.utils.pastebin import BADBin
-from BrandrdXMusic.utils.stream.queue import put_queue, put_queue_index
+from BADMUSIC.utils.pastebin import BADBin
+from BADMUSIC.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
 
 
@@ -508,4 +508,4 @@ async def get_thumb(vidid):
         return thumbnail
     except Exception as e:
         return config.YOUTUBE_IMG_URL
-                
+                                   
