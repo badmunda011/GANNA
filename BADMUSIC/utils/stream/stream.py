@@ -7,24 +7,24 @@ import asyncio
 from pyrogram import client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
-from BADMUSIC.utils.database import get_assistant
+from BrandrdXMusic.utils.database import get_assistant
 import config
-from BADMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
-from BADMUSIC.core.call import Hotty
-from BADMUSIC.misc import SUDOERS
-from BADMUSIC.utils import seconds_to_min, time_to_seconds
-from BADMUSIC.utils.channelplay import get_channeplayCB
-from BADMUSIC.utils.decorators.language import languageCB
-from BADMUSIC.utils.decorators.play import PlayWrapper
-from BADMUSIC.utils.formatters import formats
-from BADMUSIC.utils.inline import (
+from BrandrdXMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
+from BrandrdXMusic.core.call import BAD
+from BrandrdXMusic.misc import SUDOERS
+from BrandrdXMusic.utils import seconds_to_min, time_to_seconds
+from BrandrdXMusic.utils.channelplay import get_channeplayCB
+from BrandrdXMusic.utils.decorators.language import languageCB
+from BrandrdXMusic.utils.decorators.play import PlayWrapper
+from BrandrdXMusic.utils.formatters import formats
+from BrandrdXMusic.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from BADMUSIC.utils.database import (
+from BrandrdXMusic.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -32,10 +32,10 @@ from BADMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from BADMUSIC.utils.logger import play_logs
+from BrandrdXMusic.utils.logger import play_logs
 from config import BANNED_USERS, lyrical
 from time import time
-from BADMUSIC.utils.extraction import extract_user
+from BrandrdXMusic.utils.extraction import extract_user
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -48,21 +48,20 @@ SPAM_WINDOW_SECONDS = 5
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from BADMUSIC import Carbon, YouTube, app
-from BADMUSIC.core.call import Hotty
-from BADMUSIC.misc import db
-from BADMUSIC.utils.database import add_active_video_chat, is_active_chat
-from BADMUSIC.utils.exceptions import AssistantErr
-from BADMUSIC.utils.inline import (
+from BrandrdXMusic import Carbon, YouTube, app
+from BrandrdXMusic.core.call import BAD
+from BrandrdXMusic.misc import db
+from BrandrdXMusic.utils.database import add_active_video_chat, is_active_chat
+from BrandrdXMusic.utils.exceptions import AssistantErr
+from BrandrdXMusic.utils.inline import (
     aq_markup,
     queuemarkup,
     close_markup,
     stream_markup,
-    stream_markup2,
     panel_markup_4,
 )
-from BADMUSIC.utils.pastebin import HottyBin
-from BADMUSIC.utils.stream.queue import put_queue, put_queue_index
+from BrandrdXMusic.utils.pastebin import BADBin
+from BrandrdXMusic.utils.stream.queue import put_queue, put_queue_index
 from youtubesearchpython.__future__ import VideosSearch
 
 
@@ -82,7 +81,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await Hotty.force_stop_stream(chat_id)
+        await BAD.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -134,7 +133,7 @@ async def stream(
                         )
                     except:
                         await mystic.edit_text(_["play_3"])
-                await Hotty.join_call(
+                await BAD.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -230,7 +229,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Hotty.join_call(
+            await BAD.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -291,7 +290,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Hotty.join_call(chat_id, original_chat_id, file_path, video=None)
+            await BAD.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -343,7 +342,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Hotty.join_call(chat_id, original_chat_id, file_path, video=status)
+            await BAD.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -399,7 +398,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await Hotty.join_call(
+            await BAD.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -457,7 +456,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Hotty.join_call(
+            await BAD.join_call(
                 chat_id,
                 original_chat_id,
                 link,
@@ -509,4 +508,4 @@ async def get_thumb(vidid):
         return thumbnail
     except Exception as e:
         return config.YOUTUBE_IMG_URL
-            
+                
