@@ -4,7 +4,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from BADMUSIC import YouTube, app, YTB
-from BADMUSIC.core.call import Hotty
+from BADMUSIC.core.call import BAD
 from BADMUSIC.misc import SUDOERS, db
 from BADMUSIC.utils.database import (
     get_active_chats,
