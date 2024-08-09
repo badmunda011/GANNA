@@ -21,8 +21,7 @@ from BADMUSIC.utils.decorators.language import languageCB
 from BADMUSIC.utils.formatters import seconds_to_min
 from BADMUSIC.utils.inline import (
     close_markup,
-    stream_markup,
-    stream_markup2, 
+    stream_markup, 
     stream_markup_timer,
 )
 from BADMUSIC.utils.stream.autoclear import auto_clean
