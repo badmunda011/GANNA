@@ -58,7 +58,6 @@ from BADMUSIC.utils.inline import (
     queuemarkup,
     close_markup,
     stream_markup,
-    panel_markup_4,
 )
 from BADMUSIC.utils.pastebin import BADBin
 from BADMUSIC.utils.stream.queue import put_queue, put_queue_index
