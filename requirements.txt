@@ -1,4 +1,6 @@
 aiofiles
+opencv-python-headless==4.9.0.80
+pytube
 bard
 pornhub-api==0.2.0
 aiohttp==3.9.1
@@ -26,10 +28,11 @@ qrcode
 pytz
 future==0.18.3
 search_engine_parser
-py-tgcalls==0.9.7
+py-tgcalls==1.2.9
+ntgcalls==1.1.2
 pykeyboard
 pyshorteners
-pyrogram==2.0.106
+pyrofork
 python-dotenv
 pyyaml==6.0.1
 requests
