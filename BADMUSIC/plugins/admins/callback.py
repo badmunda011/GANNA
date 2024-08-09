@@ -24,7 +24,6 @@ from BADMUSIC.utils.inline import (
     stream_markup,
     stream_markup2, 
     stream_markup_timer,
-    stream_markup_timer2,
 )
 from BADMUSIC.utils.stream.autoclear import auto_clean
 from BADMUSIC.utils.thumbnails import get_thumb
